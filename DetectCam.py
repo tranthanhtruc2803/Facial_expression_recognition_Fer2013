@@ -6,8 +6,6 @@ from keras.models import load_model
 
 from efficientnet.tfkeras import EfficientNetB3
 i = 0
-# Model used
-train_model = "ResNet"  # (Inception-v3, Inception-ResNet-v2): Inception,  (ResNet-50): ResNet
 
 # Size of the images
 img_width, img_height = 197, 197
@@ -15,7 +13,7 @@ img_width, img_height = 197, 197
 emotions = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
 
 # Load trained model
-model = tf.keras.models.load_model('ensembleEmo.h5')
+model = tf.keras.models.load_model('Ensemble.h5')
 
 # Create a face cascade
 cascPath = 'haarcascade_frontalface_default.xml'
