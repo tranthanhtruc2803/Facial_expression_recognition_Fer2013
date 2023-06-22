@@ -112,7 +112,6 @@ model.add(Dropout(0.5))
 # Add a logistic layer
 model.add(Dense(7, activation="softmax"))
 
-model1 = load_model('EN1-cp.h5')
 print(len(model.layers))
 
 # Compile model--tf.keras.optimizers.Adam(lr = 1e-3, beta_1 = 0.9, beta_2 = 0.999, epsilon = 1e-08, decay = 0.0),
@@ -121,13 +120,13 @@ optm = tf.keras.optimizers.Adam(lr = 0.0001)
 check_point = ModelCheckpoint('EN1-cp.h5',
                               save_best_only= True, mode = 'auto')
 
-model1.compile(
+model.compile(
     optimizer   = optm,
     loss        = 'categorical_crossentropy',
     metrics     = ['accuracy'])
 
 # Train the model on the new data for a few epochs (Fits the model on data yielded batch-by-batch by a Python generator)
-history = model1.fit(x = train_gen, epochs = epochs_top_layers, validation_data = test_gen,
+history = mode.fit(x = train_gen, epochs = epochs_top_layers, validation_data = test_gen,
                     shuffle=True,
                     callbacks = [lrd, check_point])
     # samples_per_epoch / batch_size    steps_per_epoch = len(train_df) // batch_size,steps_per_epoch = 22967 // batch_size,
