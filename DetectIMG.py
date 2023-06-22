@@ -13,10 +13,6 @@ emotion_dict = {0: "Angry", 1: "Disgusted", 2: "Fearful", 3: "Happy", 4: "Neutra
 #model = tf.keras.models.load_model('my_model_vgg16_1.h5')
 model = tf.keras.models.load_model('RNmodel.h5')
 
-csv_file = "trainFER2013.csv"
-
-train = pd.read_csv(csv_file)
-
 IMAGE_W = 197
 IMAGE_H = 197
 
