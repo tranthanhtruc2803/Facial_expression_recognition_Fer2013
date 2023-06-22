@@ -47,7 +47,7 @@ def scalar(img):
 
 x_col = 'Filenames' # set this to point to the df column that holds the full path to the image file
 y_col = 'Label'  # set this to the df column that holds the class labels
-batch_size = 128  # set this to the batch size
+batch_size = 64  # set this to the batch size
 classmode = 'categorical'
 image_shape = (IMAGE_W, IMAGE_H)  # set this to desired image size
 
